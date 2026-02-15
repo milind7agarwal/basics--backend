@@ -1,13 +1,10 @@
-// let catMe = require('cat-me')
-// console.log(catMe())
-
 const express = require('express');
 const app = express()
 const dbConnection = require('./config/db')
 const userModel = require('./models/user.js')
 
-app.use(express.json())                            //to show data from form into serve - built in middleware
-app.use(express.urlencoded({ extended: true}))      //to show data from form into serve - built in middleware
+app.use(express.json())                            //to show data from form into serve - built in middleware -necessary when you handel post request
+app.use(express.urlencoded({ extended: true}))      //to show data from form into serve - built in middleware- necessary when you handel post request
 app.use(express.static("public"))                   // to link css file 
 
 app.set("view engine" , 'ejs') // to use ejs 
