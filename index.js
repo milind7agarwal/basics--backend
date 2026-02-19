@@ -5,7 +5,8 @@ const userModel = require('./models/user.js')
 
 app.use(express.json())                            //to show data from form into serve - built in middleware -necessary when you handel post request
 app.use(express.urlencoded({ extended: true}))      //to show data from form into serve - built in middleware- necessary when you handel post request
-app.use(express.static("public"))                   // to link css file 
+app.use(express.static("public"))           
+// you need to call '()' every .use function otherwise server won't be able to send response
 
 app.set("view engine" , 'ejs') // to use ejs 
 
